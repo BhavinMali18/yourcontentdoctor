@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Content Doctor</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #0e0e0e;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 8%;
+  background: radial-gradient(circle at top, #1c1c1c, #000);
+}
+
+.hero-text {
+  max-width: 520px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+.hero-text span {
+  color: #00ffb2;
+}
+
+.hero-text p {
+  margin-top: 20px;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.hero-text button {
+  margin-top: 25px;
+  padding: 12px 28px;
+  background: #00ffb2;
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-text button:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- 3D CUBE ---------- */
+.scene {
+  width: 260px;
+  height: 260px;
+  perspective: 1000px;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.face {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 25px 40px rgba(0,0,0,0.4);
+}
+
+.front  { transform: translateZ(130px); background-image: url("img1.jpg"); }
+.back   { transform: rotateY(180deg) translateZ(130px); background-image: url("img2.jpg"); }
+.right  { transform: rotateY(90deg) translateZ(130px); background-image: url("img3.jpg"); }
+.left   { transform: rotateY(-90deg) translateZ(130px); background-image: url("img4.jpg"); }
+.top    { transform: rotateX(90deg) translateZ(130px); background-image: url("img5.jpg"); }
+.bottom { transform: rotateX(-90deg) translateZ(130px); background-image: url("img6.jpg"); }
+
+/* ---------- SECTION ---------- */
+.section {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.section p {
+  max-width: 700px;
+  margin: auto;
+  opacity: 0.8;
+  line-height: 1.7;
+}
+
+/* ---------- SERVICES ---------- */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #141414;
+  padding: 25px;
+  border-radius: 18px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  background: #1b1b1b;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  padding: 30px;
+  text-align: center;
+  background: #000;
+  opacity: 0.8;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .scene {
+    margin-top: 40px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Hi, I'm <span>Your Content Doctor</span></h1>
+    <p>
+      Helping doctors & professionals build trust, authority, and impact
+      through powerful content & branding.
+    </p>
+    <button>Book Consultation</button>
+  </div>
+
+  <div class="scene">
+    <div class="cube" id="cube">
+      <div class="face front"></div>
+      <div class="face back"></div>
+      <div class="face right"></div>
+      <div class="face left"></div>
+      <div class="face top"></div>
+      <div class="face bottom"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <h2>Who We Are</h2>
+  <p>
+    We help doctors, clinics, and healthcare brands grow their digital presence
+    ethically using high-quality content, storytelling, and strategic branding.
+  </p>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+  <h2>What We Do</h2>
+  <div class="services">
+    <div class="card">Personal Branding</div>
+    <div class="card">Content Strategy</div>
+    <div class="card">Instagram Growth</div>
+    <div class="card">Reels & Storytelling</div>
+    <div class="card">Clinic Branding</div>
+    <div class="card">Consultation</div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Your Content Doctor • All Rights Reserved
+</footer>
+
+<script>
+let cube = document.getElementById("cube");
+let rotateX = -15;
+let rotateY = 20;
+let autoRotate = true;
+let startX, startY;
+
+function animate() {
+  if (autoRotate) {
+    rotateY += 0.15;
+    cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  }
+  requestAnimationFrame(animate);
+}
+animate();
+
+function start(e) {
+  autoRotate = false;
+  startX = e.touches ? e.touches[0].clientX : e.clientX;
+  startY = e.touches ? e.touches[0].clientY : e.clientY;
+}
+
+function move(e) {
+  if (!startX) return;
+  let x = e.touches ? e.touches[0].clientX : e.clientX;
+  let y = e.touches ? e.touches[0].clientY : e.clientY;
+
+  rotateY += (x - startX) * 0.3;
+  rotateX -= (y - startY) * 0.3;
+
+  cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  startX = x;
+  startY = y;
+}
+
+function end() {
+  startX = null;
+  startY = null;
+  setTimeout(() => autoRotate = true, 1200);
+}
+
+cube.addEventListener("mousedown", start);
+cube.addEventListener("mousemove", move);
+cube.addEventListener("mouseup", end);
+cube.addEventListener("touchstart", start);
+cube.addEventListener("touchmove", move);
+cube.addEventListener("touchend", end);
+</script>
+
+</body>
+</html>
