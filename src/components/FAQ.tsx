@@ -12,7 +12,7 @@ const faqs = [
     { question: "What if I miss a live session?", answer: "All live sessions are recorded and available for replay in your learning portal." },
     { question: "Unable to complete entire program?", answer: "You have lifetime access to the course materials, so you can learn at your own pace." },
     { question: "Refund policy details?", answer: "We offer a satisfaction guarantee. Please refer to our detailed refund policy on the registration page." },
-    { question: "Do you guarantee patient numbers, OPD growth, or revenue outcomes?", answer: "We guarantee the system and the strategy. Patient outcomes depend on consistent implementation and clinical factors." }
+    { question: "Do you guarantee patient numbers, OPD growth, or revenue outcomes?", answer: "No. Healthcare outcomes depend on multiple clinical, geographic, and operational factors. Your Content Doctor focuses on building ethical communication and authority systems that support informed patient decision-making and long-term trust. Clinical outcomes and patient volumes are never guaranteed. This protects you legally and ethically." }
 ];
 
 export default function FAQ() {

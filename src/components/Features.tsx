@@ -50,7 +50,10 @@ export default function Features() {
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-4">Results</h2>
-                    <h3 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">Practice Transformation</h3>
+                    <h3 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Practice Transformation</h3>
+                    <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                        Ethical, scalable communication systems that build professional authority, patient trust, and long-term practice sustainability.
+                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -66,7 +66,7 @@ export default function Hero() {
             <div className="w-full md:w-1/2 min-h-[60vh] md:h-screen flex flex-col justify-center px-4 sm:px-6 md:px-8 lg:pl-32 relative z-20 pb-8 md:pb-0">
 
                 {/* Stats */}
-                <div className="absolute top-20 md:top-24 lg:top-32 flex gap-8 md:gap-12" ref={statsRef}>
+                <div className="flex gap-8 md:gap-12 mb-12 md:mb-16" ref={statsRef}>
                     <div className="hero-stat">
                         <h3 className="text-2xl md:text-3xl lg:text-4xl font-light text-gray-900 dark:text-white">+15</h3>
                         <p className="text-[9px] md:text-[10px] lg:text-xs text-gray-500 uppercase tracking-wider mt-1 font-semibold">Years Exp.</p>
@@ -77,22 +77,27 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* Main Title */}
-                <div className="overflow-hidden mb-4 md:mb-6">
+                <div className="relative z-30 mb-6 md:mb-8">
                     <h1
                         ref={textRef}
-                        className="text-[60px] sm:text-[80px] md:text-[100px] lg:text-[140px] leading-[0.9] font-thin tracking-tighter text-gray-900 dark:text-white"
+                        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.2] font-medium tracking-tight text-gray-900 dark:text-white mb-6 max-w-4xl"
                     >
-                        Hello
+                        India’s pioneer in ethical medical communication and authority-based practice positioning.
                     </h1>
                 </div>
 
                 <p
                     ref={subRef}
-                    className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 font-light ml-1 md:ml-2"
+                    className="text-base sm:text-lg md:text-xl text-white font-light max-w-2xl mb-10"
                 >
-                    — It&apos;s Dr. Krupali, a medical strategist.
+                    Building long-term trust for doctors, clinics, and hospitals.
                 </p>
+
+                <div className="opacity-0" ref={el => { if (el) { gsap.to(el, { opacity: 1, duration: 1, delay: 1.5 }); } }}>
+                    <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold text-base md:text-lg transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        Medical Authority Blueprint
+                    </button>
+                </div>
 
                 {/* Scroll Indicator */}
                 <div className="absolute bottom-8 md:bottom-12 flex items-center gap-3 text-sm text-gray-400 animate-bounce">
@@ -118,6 +123,6 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }

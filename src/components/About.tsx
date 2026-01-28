@@ -63,13 +63,16 @@ export default function About() {
                     <p className="text-lg md:text-xl text-gray-500 mb-2 font-medium">Doctor • Medical Strategist • Founder</p>
                     <div className="space-y-4 md:space-y-6 text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                         <p>
-                            One of India&apos;s leading voices in ethical healthcare communication and authority-led practice positioning.
+                            One of India&apos;s leading voices in ethical healthcare communication and authority-led practice positioning for medical professionals.
                         </p>
                         <p>
-                            "Doctors don&apos;t need viral tricks. They need ethical authority patients can trust."
+                            Educating doctors to communicate with clarity, build patient awareness responsibly, and strengthen long-term practice value.
                         </p>
                         <p>
-                            From a confused content freelancer to one of India&apos;s most trusted medical branding specialists — Dr. Krupali Chudasama built Your Content Doctor with one mission: to help doctors communicate ethically, scientifically and with authority.
+                            To empower every doctor with ethical communication and patient-education systems that build trust, elevate professional credibility, and improve healthcare literacy in India.
+                        </p>
+                        <p>
+                            Today, her Medical Communication Blueprint (MCB) and 4-Phase Authority System have helped doctors build professional credibility, improve patient understanding, and strengthen practice sustainability—without discounts, viral tricks, or misleading promises.
                         </p>
                     </div>
                 </div>

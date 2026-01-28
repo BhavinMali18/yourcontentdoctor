@@ -22,6 +22,7 @@ type Card = {
     title: string;
     category: string;
     content: React.ReactNode;
+    videoSrc?: string;
 };
 
 export const CarouselContext = createContext<{
@@ -252,12 +253,23 @@ export const Card = ({
                         {card.title}
                     </motion.p>
                 </div>
-                <BlurImage
-                    src={card.src}
-                    alt={card.title}
-                    fill
-                    className="object-cover absolute z-10 inset-0"
-                />
+                {card.videoSrc ? (
+                    <video
+                        src={card.videoSrc}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover z-10"
+                    />
+                ) : (
+                    <BlurImage
+                        src={card.src}
+                        alt={card.title}
+                        fill
+                        className="object-cover absolute z-10 inset-0"
+                    />
+                )}
             </motion.button>
         </>
     );
